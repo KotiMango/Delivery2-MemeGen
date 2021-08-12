@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body onload="init()">
+    <nav class="nav-container container">
+      <img
+        class="logo"
+        src="./IMG/newLogo.png"
+        onclick="window.location.reload()"
+      />
+      <ul class="nav cln-lst">
+        <li
+          class="nav-gallery"
+          data-trans="gallery"
+          onclick="window.location.reload()"
+        >
+          Gallery
+        </li>
+        <li
+          class="nav-about"
+          data-trans="about"
+          onclick="onFetchAbout()"
+        >
+          About
+        </li>
+        <li class="nav-lang">
+          <select
+            onchange="onSetLang(this.value)"
+            class="lang-select"
+          >
+            <option value="en" data-trans="english">English</option>
+            <option value="he" data-trans="hebrew">Hebrew</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="searchbox-container container">
+      <div class="search-box">
+        <input
+          type="text"
+          list="sort-vals"
+          data-trans="searchbox"
+          placeholder="Search..."
+          onkeyup="onFilterBoilerPlates(this.value)"
+        />
+        <datalist id="sort-vals">
+          <option data-trans="funny" value="Funny"></option>
+          <option data-trans="sad" value="Sad"></option>
+          <option data-trans="epicwin" value="Epicwin"></option>
+          <option data-trans="cats" value="Cats"></option>
+          <option data-trans="brian" value="Unlucky-Brian"></option>
+        </datalist>
+      </div>
+
+      <div class="sortby-keywords"></div>
+    </div>
+
+    <div class="superior-container container">
+      <div class="gallery-container"></div>
+    </div>
+
+    <div class="inferior-container container">
+      <div class="meme-container"></div>
+    </div>
+
+    <div class="canvas-container container">
+      <canvas
+        id="meme-canvas"
+        height="450"
+        width="450"
+        style="border: 1px solid black"
+      ></canvas>
+      <div class="meme-ctrl">
+        <input
+          type="text"
+          class="ctrl-txt-input"
+          value=""
+          onkeyup="onChangeTxt(value)"
+          title="Change Text"
+          data-trans="change-text"
+        />
+        <div class="btn-cluster">
+          <button
+            class="ctrl-btn"
+            onclick="onSwitchLines()"
+            title="Switch Text"
+            data-trans="switch-text"
+          >
+            <img src="./ICONS/switch.png" />
+          </button>
+          <button
+            class="ctrl-btn"
+            onclick="onAddLine()"
+            title="Add New Text"
+            data-trans="new-text"
+          >
+            <img src="./ICONS/add.png" />
+          </button>
+          <button
+            class="ctrl-btn"
+            onclick="onDelLine()"
+            title="Delete Text"
+            data-trans="delete-text"
+          >
+            <img src="./ICONS/trash.png" />
+          </button>
+        </div>
+        <button
+          class="ctrl-btn"
+          onclick="onChangeSize(1)"
+          title="Increase"
+          data-trans="increase"
+        >
+          <img src="./ICONS/increase-font.png" />
+        </button>
+        <button
+          class="ctrl-btn"
+          onclick="onChangeSize(-1)"
+          title="Decrease"
+          data-trans="decrease"
+        >
+          <img src="./ICONS/decrease-font.png" />
+        </button>
+        <button
+          class="ctrl-btn"
+          onclick="onChangeAlign('right')"
+          title="Align Left"
+          data-trans="align_left"
+        >
+          <img src="./ICONS/align-to-left.png" />
+        </button>
+        <button
+          class="ctrl-btn"
+          onclick="onChangeAlign('center')"
+          title="Align Center"
+          data-trans="align_center"
+        >
+          <img src="./ICONS/align-center.png" />
+        </button>
+        <button
+          class="ctrl-btn"
+          onclick="onChangeAlign('left')"
+          title="Align Right"
+          data-trans="align_right"
+        >
+          <img src="./ICONS/align-to-right.png" />
+        </button>
+        <select
+          class="ctrl-select"
+          onchange="onChangeFont(value)"
+          title="Choose Font"
+          data-trans="font"
+        >
+          <option>Impact</option>
+          <option>Montserrat</option>
+          <option>Pattaya</option>
+          <option>Poppin</option>
+          <option>Arial</option>
+        </select>
+        <button class="ctrl-btn">
+          <input
+            class="ctrl-color-input"
+            type="color"
+            onchange="onChangeOutlineColor(value)"
+            title="Choose Outline color"
+            data-trans="outline-color"
+          /><img src="./ICONS/text-stroke.png" />
+        </button>
+        <button class="ctrl-btn">
+          <input
+            class="ctrl-color-input"
+            type="color"
+            onchange="onChangeFillColor(value)"
+            title="Choose color"
+            data-trans="fill-color"
+          /><img src="./ICONS/paint-board-and-brush.png" />
+        </button>
+        <button
+          class="ctrl-btn save-btn"
+          onclick="onSaveToStorage()"
+          data-trans="save"
+        >
+          Save
+        </button>
+        <button class="ctrl-btn download-btn">
+          <a
+            href="#"
+            onclick="onDownloadCanvas(this)"
+            download=""
+            data-trans="download"
+            >Download</a
+          >
+        </button>
+        <form
+          action=""
+          method="POST"
+          enctype="multipart/form-data"
+          onsubmit="uploadImg(this, event)"
+        >
+          <input name="img" id="imgData" type="hidden" />
+          <button
+            class="ctrl-btn share-btn"
+            type="submit"
+            onsubmit="uploadImg(this, event)"
+            data-trans="share"
+          >
+            Share on FB
+          </button>
+        </form>
+        <div
+          class="stickers-div"
+          title="Choose Stickers"
+          data-trans="stickers"
+        >
+          <button class="sticker-btn" onclick="onChangePage(-1)">
+            <img src="./ICONS/left-arrow.png" />
+          </button>
+          <div class="stickers"></div>
+          <button class="sticker-btn" onclick="onChangePage(1)">
+            <img src="./ICONS/right-arrow.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-container container">
+      <img class="about-img" src="./IMG/Boi.jpg" />
+      <div class="about-info">
+        <h1 data-trans="about-name">MemeGen</h1>
+        <p data-trans="about-info">
+          So Long And Thanks For The Fish
+        </p>
+        <div class="about-contact">
+          <button title="Linkedin">
+            <img src="./ICONS/linkedin-logo.png" />
+          </button>
+          <button title="Facebook">
+            <img src="./ICONS/facebook-logo.png" />
+          </button>
+          <button title="Github">
+            <img src="./ICONS/github-logo.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-container container">
+      <img
+        class="logo"
+        src="./IMG/LOGO.png"
+        onclick="window.location.reload()"
+      />
+      <p data-trans="rights">all rights reserved 2019</p>
+    </footer>
+    <script src="./js/util-svcs.js"></script>
+    <script src="./js/stge-svcs.js"></script>
+    <script src="./js/meme-svcs.js"></script>
+    <script src="./js/gallery-ctrl.js"></script>
+    <script src="./js/meme-ctrl.js"></script>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+/* CORE */
+
+@font-face {
+  font-family: Monsterrat;
+  src: url(../FONTS/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Monsterrat-bold;
+  src: url(../FONTS/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Lato;
+  src: url(../FONTS/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(../FONTS/rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: Mosaic;
+  src: url(../FONTS/PaletteMosaic-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.logo {
+  width: 130px;
+  cursor: pointer;
+}
+.cln-lst {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.about-container {
+  display: none;
+}
+/* LAYOUT */
+
+.container {
+  padding: 0 3rem;
+}
+
+/* NAV */
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  margin: 0;
+  background-color: #ff7f00;
+}
+
+ul.nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+li {
+  color: #ffffff;
+  font-size: 1.1875rem;
+}
+
+li:hover {
+  color: #040a2c;
+  cursor: pointer;
+}
+
+li.clicked {
+  color: #040a2c;
+  box-shadow: inset 0 -3px 0 #040a2c;
+}
+
+.lang-select {
+  border-radius: 1rem;
+  color: #040a2c;
+  cursor: pointer;
+  border: none;
+}
+
+/* SEARCH */
+
+.searchbox-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2.25rem 0 1.875rem 0;
+  text-align: center;
+  width: 68.75rem;
+}
+
+.searchbox-container input {
+  border: none;
+  width: 260px;
+  height: 35px;
+  text-align: center;
+  font-size: 1.1875rem;
+  color: #000;
+  border-bottom: 2px solid #040a2c;
+  background: url(../ICONS/search-icon.png) no-repeat scroll;
+  background-size: 25px 25px;
+  background-position-x: right;
+}
+
+.search-box {
+  position: relative;
+}
+
+.sortby-keywords {
+  width: 50%;
+}
+/* GALLERY */
+
+.superior-container {
+  background-color: #e3e3e3;
+}
+
+.gallery-container {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 40px 0;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, 240px);
+}
+.gallery-container > img {
+  align-self: center;
+  cursor: pointer;
+  width: 240px;
+}
+
+.gallery-container > img:hover {
+  opacity: 0.85;
+  border: 1px solid white;
+}
+
+/* CANVAS&CTRLS */
+
+.canvas-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1.375rem 0;
+  background-color: #e3e3e3;
+}
+
+.meme-ctrl {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: repeat(4, 1fr) 8.4375rem 1fr;
+  gap: 1.875rem 1.125rem;
+}
+
+.ctrl-txt-input {
+  grid-column: 1/-1;
+  grid-row: 1 / span 1;
+  width: 23.3125rem;
+  height: 3.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  font-size: 1.25rem;
+}
+
+.btn-cluster {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.ctrl-btn {
+  width: 3.75rem;
+  height: 3.75rem;
+  justify-self: center;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.ctrl-btn > img {
+  width: 50%;
+  height: 50%;
+}
+
+.sticker {
+  display: none;
+  cursor: pointer;
+}
+
+.sticker-btn {
+  height: 3.125rem;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 0.75rem;
+}
+.stickers-div {
+  grid-column: 1/-1;
+  grid-row: 5 / span 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8.4375rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+}
+
+canvas {
+  cursor: crosshair;
+}
+
+/* FOOTER */
+
+.footer-container {
+  width: 100%;
+  position: static;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ff7f00;
+  height: 12.8125rem;
+  margin: 0 auto;
+  font-size: 1.1875rem;
+  padding-bottom: 0;
+  box-shadow: 0 50vh 0 50vh #ff7f00;
+}
