@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css" />
   </head>
@@ -22,14 +25,25 @@
         >
           Gallery
         </li>
-        <li class="nav-memes" data-trans="memes" onclick="onFetchMemes()">
+        <li
+          class="nav-memes"
+          data-trans="memes"
+          onclick="onFetchMemes()"
+        >
           Memes
         </li>
-        <li class="nav-about" data-trans="about" onclick="onFetchAbout()">
+        <li
+          class="nav-about"
+          data-trans="about"
+          onclick="onFetchAbout()"
+        >
           About
         </li>
         <li class="nav-lang">
-          <select onchange="onSetLang(this.value)" class="lang-select">
+          <select
+            onchange="onSetLang(this.value)"
+            class="lang-select"
+          >
             <option value="en" data-trans="english">English</option>
             <option value="he" data-trans="hebrew">Hebrew</option>
           </select>
@@ -47,11 +61,18 @@
           onkeyup="onFilterBoilerPlates(this.value)"
         />
         <datalist id="sort-vals">
-          <option data-trans="funny" value="Funny"></option>
-          <option data-trans="sad" value="Sad"></option>
-          <option data-trans="epicwin" value="Epicwin"></option>
-          <option data-trans="cats" value="Cats"></option>
-          <option data-trans="brian" value="Unlucky-Brian"></option>
+          <option data-trans="funny" value="funny">Funny</option>
+          <option data-trans="sad" value="movie">Movie</option>
+          <option data-trans="epicwin" value="brain">
+            Unlucky-Brain
+          </option>
+          <option data-trans="cats" value="sport">Sbort</option>
+          <option data-trans="brian" value="epicwin">
+            Epic-Win
+          </option>
+          <option data-trans="brian" value="kid">Kid</option>
+          <option data-trans="brian" value="tv">Television</option>
+          <option data-trans="brian" value="baby">Baby</option>
         </datalist>
       </div>
 
@@ -210,7 +231,11 @@
             Share on FB
           </button>
         </form>
-        <div class="stickers-div" title="Choose Stickers" data-trans="stickers">
+        <div
+          class="stickers-div"
+          title="Choose Stickers"
+          data-trans="stickers"
+        >
           <button class="sticker-btn" onclick="onChangePage(-1)">
             <img src="./ICONS/left-arrow.png" />
           </button>
@@ -226,7 +251,9 @@
       <img class="about-img" src="./IMG/Boi.jpg" />
       <div class="about-info">
         <h1 data-trans="about-name">MemeGen</h1>
-        <p data-trans="about-info">So Long And Thanks For The Fish</p>
+        <p data-trans="about-info">
+          So Long And Thanks For The Fish
+        </p>
         <div class="about-contact">
           <button title="Linkedin">
             <img src="./ICONS/linkedin-logo.png" />

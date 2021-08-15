@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var gSavedImgs = [];
 const saveToStorage = (key, value) => {
   var item = JSON.stringify(value);
@@ -13,12 +13,14 @@ const loadFromStorage = (key) => {
 };
 
 const saveImg = (data) => {
-  gSavedImgs = loadFromStorage("memeImg");
+  gSavedImgs = loadFromStorage('memeImg');
   gSavedImgs.push(data);
-  saveToStorage("memeImg", gSavedImgs);
+  saveToStorage('memeImg', gSavedImgs);
 };
 
-const getSavedMemes = () => loadFromStorage("memeImg");
+const getSavedMemes = () => loadFromStorage('memeImg');
 
-const setCurrLang = (lang) => saveToStorage("currLang", lang);
-const getCurrLang = () => loadFromStorage("currLang");
+const setCurrLang = (lang) => saveToStorage('currLang', lang);
+const getCurrLang = () => loadFromStorage('currLang');
+
+const stgeGetClikedImg = (idx) => getSavedMemes()[idx];
