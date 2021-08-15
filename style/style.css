@@ -24,6 +24,10 @@
   font-family: Mosaic;
   src: url(../FONTS/PaletteMosaic-Regular.ttf);
 }
+@font-face {
+  font-family: pattaya;
+  src: url(../FONTS/Pattaya-Regular.ttf);
+}
 
 * {
   box-sizing: border-box;
@@ -146,6 +150,24 @@ li.clicked {
   opacity: 0.85;
   border: 1px solid white;
 }
+.meme-container {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 40px 0;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, 240px);
+}
+.meme-container > img {
+  align-self: center;
+  cursor: pointer;
+  width: 240px;
+}
+
+.meme-container > img:hover {
+  opacity: 0.85;
+  border: 1px solid white;
+}
 
 /* CANVAS&CTRLS */
 
@@ -245,4 +267,25 @@ canvas {
   font-size: 1.1875rem;
   padding-bottom: 0;
   box-shadow: 0 50vh 0 50vh #ff7f00;
+}
+
+/* Like they say in canada abooot */
+
+.about-container {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: pattaya, sans-serif;
+}
+
+.about-img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 2rem;
+}
+
+.about-contact {
+  display: flex;
+  transform: scale(0.3);
 }

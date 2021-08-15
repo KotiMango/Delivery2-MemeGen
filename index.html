@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css" />
   </head>
@@ -25,18 +22,14 @@
         >
           Gallery
         </li>
-        <li
-          class="nav-about"
-          data-trans="about"
-          onclick="onFetchAbout()"
-        >
+        <li class="nav-memes" data-trans="memes" onclick="onFetchMemes()">
+          Memes
+        </li>
+        <li class="nav-about" data-trans="about" onclick="onFetchAbout()">
           About
         </li>
         <li class="nav-lang">
-          <select
-            onchange="onSetLang(this.value)"
-            class="lang-select"
-          >
+          <select onchange="onSetLang(this.value)" class="lang-select">
             <option value="en" data-trans="english">English</option>
             <option value="he" data-trans="hebrew">Hebrew</option>
           </select>
@@ -217,11 +210,7 @@
             Share on FB
           </button>
         </form>
-        <div
-          class="stickers-div"
-          title="Choose Stickers"
-          data-trans="stickers"
-        >
+        <div class="stickers-div" title="Choose Stickers" data-trans="stickers">
           <button class="sticker-btn" onclick="onChangePage(-1)">
             <img src="./ICONS/left-arrow.png" />
           </button>
@@ -237,9 +226,7 @@
       <img class="about-img" src="./IMG/Boi.jpg" />
       <div class="about-info">
         <h1 data-trans="about-name">MemeGen</h1>
-        <p data-trans="about-info">
-          So Long And Thanks For The Fish
-        </p>
+        <p data-trans="about-info">So Long And Thanks For The Fish</p>
         <div class="about-contact">
           <button title="Linkedin">
             <img src="./ICONS/linkedin-logo.png" />
@@ -262,10 +249,10 @@
       />
       <p data-trans="rights">all rights reserved 2019</p>
     </footer>
-    <script src="./js/util-svcs.js"></script>
     <script src="./js/stge-svcs.js"></script>
     <script src="./js/meme-svcs.js"></script>
     <script src="./js/gallery-ctrl.js"></script>
+    <script src="./js/i18n-svcs.js"></script>
     <script src="./js/meme-ctrl.js"></script>
   </body>
 </html>
