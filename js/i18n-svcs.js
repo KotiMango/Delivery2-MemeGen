@@ -105,16 +105,6 @@ var gTranslations = {
     en: 'all rights reserved 2019',
     he: 'כל הזכויות שמורות 2019',
   },
-  'about-name': {
-    en: 'Marshall Eriksen',
-    he: 'מרשל אריקסן',
-  },
-  'about-info': {
-    en:
-      ' Marshall Eriksen (born 1978) is one of the five main characters of How I Met Your Mother, portrayed by Jason Segel',
-    he:
-      'מרשל אריקסן (נולד ב -1978) הוא אחד מחמש הדמויות הראשיות של איך פגשתי את אמא שלך , שתואר על ידי גייסון.',
-  },
   'switch-text': {
     en: 'Switch Text',
     he: 'החלף שורת טקסט',
