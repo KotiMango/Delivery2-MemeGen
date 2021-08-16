@@ -3,7 +3,6 @@ var gTxtHiglight = true;
 var gCanvas;
 var gCtx;
 
-//This function gets called from onRenderCanvas when an image is clicked
 const renderCanvas = () => {
   gCanvas = document.querySelector('#meme-canvas');
   gCtx = gCanvas.getContext('2d');
@@ -20,7 +19,6 @@ const memePlopImg = () => {
   gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height);
 };
 
-//FYI meme lines is an array of objects ergo, each index is an object
 const memeRenderTxt = () => {
   const memeLines = getMemeLines();
   if (!memeLines || !memeLines.length) return;
